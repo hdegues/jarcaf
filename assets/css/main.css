@@ -2597,3 +2597,7 @@ ul {
 .mfp-zoom-in.mfp-removing.mfp-bg {
     opacity: 0;
 }
+
+.limited {
+    overflow: hidden;
+}
