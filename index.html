@@ -21,7 +21,7 @@
 	</head>
 
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-BGN0VJ8RLE"></script>
-	<script src="/jarcaf/assets/js/analitics.js"></script>
+	<script src="assets/js/analitics.js"></script>
 	
 	<body>
 		<div class="page-wrap">
@@ -63,7 +63,10 @@
 			<div class="md-content">
 				
 				<!-- hero -->
-				<div class="hero" id="id-1" style="background-image: url('assets/img/bg/1.jpg');">
+				<!-- style="background-image: url('assets/img/bg/5.jpg');" -->
+				<div class="hero" id="id-1" 
+					
+				>
 					<div class="hero__wrapper">
 						<div class="container">
 							<div class="row">
@@ -157,11 +160,15 @@
 									<p class="service__text">Animamos tus ideas</p>
 								</div><!-- End / service -->
 								
-                                <!-- service -->
 								<div class="service mb-0">
 									<div class="service__icon"><i class="pe-7s-car"></i></div>
 									<h3 class="service__title">3D</h3>
 									<p class="service__text">Objetos 3d</p>
+								</div>
+								<div class="service mb-0">
+									<div class="service__icon"><i class="pe-7s-plugin"></i></div>
+									<h3 class="service__title">Print 3D</h3>
+									<p class="service__text">Impresin de objetos 3d</p>
 								</div><!-- End / service -->
 								
 								<!-- service -->
@@ -224,6 +231,7 @@
 								<div class="grid-item normal catAnimotion">
 									<div class="grid-item__inner">
 										<div class="grid-item__content-wrapper">
+
 											<div class="portfolio" href="https://www.youtube.com/watch?v=esRsgxJeiIM"><a class="portfolio__bg popup-video" 
                                                 href="https://www.youtube.com/watch?v=esRsgxJeiIM" 
                                                 style="background-image: url('https://i.ytimg.com/vi/esRsgxJeiIM/hqdefault.jpg');" 
@@ -238,7 +246,10 @@
 										<div class="grid-item__content-wrapper">
 											
 											<!-- portfolio -->
-											<div class="portfolio" href="assets/img/portfolio/colorizy.png"><a class="portfolio__bg" href="assets/img/portfolio/colorizy.png" style="background-image: url('assets/img/portfolio/colorizy.png');" data-effect="mfp-zoom-in"><img src="assets/img/portfolio/colorizy.png"/></a>
+											<div class="portfolio" href="assets/img/portfolio/colorizy.png"><a class="portfolio__bg" 
+												href="colorizy/index.html"
+												style="background-image: url('assets/img/portfolio/colorizy.png');"
+												data-effect="goto"><img src="assets/img/portfolio/colorizy.png"/></a>
 											</div><!-- End / portfolio -->
 											
 										</div>
@@ -380,8 +391,9 @@
 						<p class="footer__copy">2018 &copy; Copyright JARCAF. All rights Reserved.</p>
 					</div>
 				</div>
-			</div><!-- End / footer -->
 			
+				<p class="footer__version"> &nbsp; <span id="page-version"></span></p>
+			</div><!-- End / footer -->
 		</div>
 		<!-- Vendors-->
 		<script type="text/javascript" src="assets/vendors/jquery.min.js"></script>
@@ -396,6 +408,15 @@
 		<script type="text/javascript" src="assets/vendors/menu/menu.js"></script>
 		<script type="text/javascript" src="assets/vendors/typed/typed.min.js"></script>
 		<!-- App-->
-		<script type="text/javascript" src="assets/js/main.js"></script>
+		<script type="text/javascript" src="assets/js/main.js?v=1"></script>
+		<script type="text/javascript">
+			$( document ).ready(function () {
+				
+				let img = Math.floor( Math.random() * 5);
+				if (img < 3) img = 2;
+				$('#id-1').css('background-image', 'url(' + 'assets/img/bg/' + img + '.jpg' + ')');
+				$('#page-version').showVersion();
+			});
+		</script>
 	</body>
 </html>

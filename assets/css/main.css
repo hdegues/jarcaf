@@ -2226,7 +2226,7 @@ ul {
 
 .hero {
     position: relative;
-    background-color: #eee;
+    background-color: #777;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -2600,4 +2600,17 @@ ul {
 
 .limited {
     overflow: hidden;
+}
+
+.footer__version {
+    float: right;
+    vertical-align: bottom;
+    padding-right: 6px;
+}
+
+.regresar {
+    float: right;
+    vertical-align: top;
+    padding-bottom: 60px;
+    color: #000;
 }
