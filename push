@@ -1,5 +1,7 @@
 #!/bin/bash
 echo "-- ACTUALIZANDO VERSION -- "
+FILE="version"
+
 contenido=$(cat $FILE)
 IFS='.' read -r -a partes <<< "$contenido"
 
