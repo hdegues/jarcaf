@@ -148,6 +148,17 @@
 	}
 	work();
 
+	function evaluaEfecto(efecto, href) {
+		if ('goto' == efecto) {
+			window.location.href = href;
+			return true;
+		} else if ('gotohref' == efecto) {
+			window.open(href, '__blank');
+			return true;
+		}
+		return false;
+	}
+
 	$('.portfolio').magnificPopup({
 		delegate: 'a',
 		type: 'image',
@@ -159,10 +170,9 @@
 		removalDelay: 500, //delay removal by X to allow out-animation
 		callbacks: {
 			beforeOpen: function () {
-				if ('goto' == this.st.el.attr('data-effect')) {
-					window.location.href = this.st.el.attr('href');
-					return;
-				}
+				let result = evaluaEfecto(this.st.el.attr('data-effect'), this.st.el.attr('href'));
+				if (result) return;
+
 				this.st.mainClass = this.st.el.attr('data-effect');
 			}
 		},
@@ -178,21 +188,22 @@
 		fixedContentPos: true,
 		closeMarkup: '<button title="%title%" type="button" class="mfp-close"><i class="pe-7s-close"></i></button>',
 
-		removalDelay: 500, //delay removal by X to allow out-animation
+		removalDelay: 300, //delay removal by X to allow out-animation
 		callbacks: {
 			beforeOpen: function () {
-				if ('gotohref' == this.st.el.attr('data-effect')) {
-					window.open(this.st.el.attr('href'), '__blank');
-					return;
-				}
+				let result = evaluaEfecto(this.st.el.attr('data-effect'), this.st.el.attr('href'));
+				this.type = 'image';
+				if (result) return;
+
 				this.st.mainClass = this.st.el.attr('data-effect');
 			},
-
 			open: function () {
-				if ('gotohref' == this.st.el.attr('data-effect')) {
-					this.close();
+				if ('gotohref' == this.st.el.attr('data-effect')) {		
+					setTimeout(() => {
+						$('.element-with-popup').magnificPopup('close')
+					}, 600);
 				}
-			}
+			},
 		},
 		midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
 	});
