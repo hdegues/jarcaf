@@ -1,0 +1,25 @@
+#!/bin/bash
+echo "-- ACTUALIZANDO VERSION -- "
+contenido=$(cat $FILE)
+IFS='.' read -r -a partes <<< "$contenido"
+
+mayor=${partes[0]}
+minor=${partes[1]}
+fix=${partes[2]}
+
+((fix++))
+if (( $fix > 99 )); then
+    ((minor++))
+    fix=0
+fi
+if (( $minor > 99 )); then
+    ((mayor++))
+    minor=0
+fi
+
+# reemplazando X por Y
+#contenido="${contenido//X/Y}"
+echo "$mayor.$minor.$fix" > $FILE
+
+git add $FILE
+git commit  --amend --no-edit
