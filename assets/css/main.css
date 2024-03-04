@@ -2606,6 +2606,8 @@ ul {
     float: right;
     vertical-align: bottom;
     padding-right: 6px;
+    color: #333;
+    font-size: smaller;
 }
 
 .regresar {
