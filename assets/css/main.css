@@ -2288,7 +2288,13 @@ ul {
 
 @media (min-width: 320px) {
     .hero__title {
-        font-size: calc(4.54545vw + 23px);
+        font-size: calc(4.54545vw + 16px);
+    }
+}
+
+@media (min-width: 500px) {
+    .hero__title {
+        font-size: calc(4.54545vw + 22px);
     }
 }
 
