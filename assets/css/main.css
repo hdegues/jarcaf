@@ -2288,7 +2288,7 @@ ul {
 
 @media (min-width: 320px) {
     .hero__title {
-        font-size: calc(4.54545vw + 25.45455px);
+        font-size: calc(4.54545vw + 23px);
     }
 }
 
