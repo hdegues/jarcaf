@@ -361,3 +361,74 @@
 	})
 
 })(jQuery);
+
+var config = {
+	api: ''
+};
+
+
+function loadValues() {
+	
+	let client = new XMLHttpRequest();
+	client.open('GET', './values');
+	client.onreadystatechange = function () {
+		let contenido = client.responseText;
+		let lineas = contenido.split("\n");
+		if (lineas.length < 1) return;
+
+		for(let i = 0; i < lineas.length; i++) {
+			if (lineas[i].indexOf('api=') > -1) {
+				let partes = lineas[i].split("=");
+				config.api = partes[1];
+				return 
+			}
+		}
+	}
+	client.send();
+}
+
+function showRandomBackground() {
+	let img = Math.floor( Math.random() * 5) + 1;
+	if (img < 3) img = 2;
+	$('#id-1').css('background-image', 'url(' + 'assets/img/bg/' + img + '.webp' + ')');
+}
+
+function showAppVersion() {
+	$('#page-version').showVersion();
+}
+
+function sendContactForm() {
+	$.ajax({type: "POST", url: config.api + '/contactar',
+		data: {
+			nombre: $('#form-nombre').val(),
+			email: $('#form-email').val(),
+			mensaje: $('#form-mensaje').val()
+		},
+		dataType: 'json',
+		success: processContactResponse
+	});
+}
+
+function processContactResponse(result) {
+	if (result.resultado > 0) {
+		showSuccess(result.mensaje);
+		cleanForm();
+	} else {
+		showFailed(result.mensaje);
+	}
+}
+
+function showSuccess(mensaje) {
+	if (mensaje) $('#form-message-success').text(' - ' + mensaje);
+}
+
+function showFailed(mensaje) {
+	if (mensaje) $('#form-message-failed').text(' - ' + mensaje);
+}
+
+function cleanForm() {
+	$('#form-nombre').val(''),
+	$('#form-email').val(''),
+	$('#form-mensaje').val(''),
+	$('#form-message-failed').text('');
+}

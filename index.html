@@ -221,6 +221,7 @@
 							</div>
 							<div class="grid__inner">
 								<div class="grid-sizer"></div>
+								
 								<div class="grid-item normal catAnimotion">
 									<div class="grid-item__inner">
 										<div class="grid-item__content-wrapper">
@@ -234,6 +235,21 @@
 										</div>
 									</div>
 								</div>
+
+								<div class="grid-item normal catAnimotion">
+									<div class="grid-item__inner">
+										<div class="grid-item__content-wrapper">
+
+											<div class="portfolio" href="https://www.youtube.com/watch?v=fh2iB7UspXQ"><a class="portfolio__bg popup-video" 
+                                                href="https://www.youtube.com/watch?v=fh2iB7UspXQ" 
+                                                style="background-image: url('https://i.ytimg.com/vi/fh2iB7UspXQ/hqdefault.jpg');" 
+                                                data-effect="gotohref"><img src="https://i.ytimg.com/vi/fh2iB7UspXQ/hqdefault.jpg"/>
+													<div class="portfolio__icon"><i class="fa fa-play"></i></div></a>
+											</div>
+										</div>
+									</div>
+								</div>
+								
 								<div class="grid-item normal catGame catDevelopment">
 									<div class="grid-item__inner">
 										<div class="grid-item__content-wrapper">
@@ -310,7 +326,7 @@
 									<div class="form-item form-item--half">
 										<label class="form__label">email,<span>*</span>
 										</label>
-										<input class="form-control" type="text" name="input" placeholder=""/>
+										<input id="form-email" class="form-control" type="text" name="input" placeholder=""/>
 									</div><!-- End / form-item -->
 									
 									
@@ -318,7 +334,7 @@
 									<div class="form-item form-item--half">
 										<label class="form__label">Name,<span>*</span>
 										</label>
-										<input class="form-control" type="text" name="input" placeholder=""/>
+										<input id="form-nombre" class="form-control" type="text" name="input" placeholder=""/>
 									</div><!-- End / form-item -->
 									
 									
@@ -326,14 +342,17 @@
 									<div class="form-item">
 										<label class="form__label">message<span>*</span>
 										</label>
-										<textarea class="form-control"></textarea>
+										<textarea id="form-mensaje" class="form-control"></textarea>
 									</div><!-- End / form-item -->
-									
+
+									<div class="form-item">
+										<span id="form-message-success" class="md-btn--success"> </span>
+										<div id="form-message-failed" class="md-btn--danger"> </div>
+									</div>
 									
 									<!-- form-item -->
 									<div class="form-item">
-										<a class="md-btn btn-custom" href="#">Send message
-										</a>
+										<a id="btn-send-contacto" class="md-btn btn-custom" href="javascript:void(0)">Send message</a>
 									</div><!-- End / form-item -->
 									
 								</div>
@@ -399,10 +418,10 @@
 		<script type="text/javascript" src="assets/js/main.js?v=1"></script>
 		<script type="text/javascript">
 			$( document ).ready(function () {
-				let img = Math.floor( Math.random() * 5) + 1;
-				if (img < 3) img = 2;
-				$('#id-1').css('background-image', 'url(' + 'assets/img/bg/' + img + '.webp' + ')');
-				$('#page-version').showVersion();
+				showRandomBackground();
+				showAppVersion();
+				loadValues();
+				$('#btn-send-contacto').bind('click', sendContactForm);
 			});
 		</script>
 	</body>
