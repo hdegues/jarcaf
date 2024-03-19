@@ -399,6 +399,7 @@ function showAppVersion() {
 
 function sendContactForm() {
 	$.ajax({type: "POST", url: config.api + '/contactar',
+		headers: { "bypass-tunnel-reminder": 1},
 		data: {
 			nombre: $('#form-nombre').val(),
 			email: $('#form-email').val(),

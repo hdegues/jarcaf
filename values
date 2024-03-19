@@ -1,4 +1,3 @@
 api=https://jarcaf.loca.lt/jarcafapi
-#api=https://www.egues.bro/jarcafapi
-#api=https://jarcafapi-dev.egues.bro
-#api=https://jarcafapi.egues.bro
+#apiTOSHI=http://toshi.egues.bro/jarcafapi
+#apiDEV=https://www.egues.bro/jarcafapi
