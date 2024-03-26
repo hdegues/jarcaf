@@ -1899,6 +1899,29 @@ ul {
     align-items: center;
 }
 
+.header__server {
+    flex-grow: 1
+}
+
+.header__server .status {
+    display: inline-block;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: #748182;
+    border-width: 1px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 0;
+    margin-left: 8px;
+    line-height: 20px;
+    color: #748182;
+}
+
+.header__server .online {
+    border-color: #19c2c9;
+    color: #19c2c9;
+}
+
 .onepage-nav {
     z-index: 999;
 }

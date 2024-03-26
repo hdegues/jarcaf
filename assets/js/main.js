@@ -362,29 +362,53 @@
 
 })(jQuery);
 
-var config = {
-	api: ''
-};
+var config = {};
 
 
 function loadValues() {
-	
 	let client = new XMLHttpRequest();
 	client.open('GET', './values');
 	client.onreadystatechange = function () {
-		let contenido = client.responseText;
-		let lineas = contenido.split("\n");
-		if (lineas.length < 1) return;
+		if (requestCompletado(client)) {
+			readConfig(client.responseText);
 
-		for(let i = 0; i < lineas.length; i++) {
-			if (lineas[i].indexOf('api=') > -1) {
-				let partes = lineas[i].split("=");
-				config.api = partes[1];
-				return 
-			}
+			checkStatus();
 		}
 	}
 	client.send();
+}
+
+function requestCompletado(client) {
+	return client.readyState == 4;
+}
+
+function readConfig(responseText) {
+	let lineas = responseText.split("\n");
+	if (lineas.length < 1) return;
+
+	for(let i = 0; i < lineas.length; i++) {
+		let indice = lineas[i].indexOf('=');
+		if (indice > -1) {
+			let key = lineas[i].substring(0, indice);
+			let valor = lineas[i].substring(indice + 1);
+			config[key] = valor;
+		}
+	}
+}
+
+function checkStatus() {
+	$.ajax({type: "GET", url: config.api + '/',
+		headers: { "bypass-tunnel-reminder": 1},
+		dataType: 'json',
+		success: showIfOnline
+	});
+}
+
+function showIfOnline(result) {
+	if (result.env == "production") {
+		$('#serverStatus').addClass('online');
+		$('#serverStatus').html('online');
+	}
 }
 
 function showRandomBackground() {
