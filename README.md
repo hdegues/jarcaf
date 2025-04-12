@@ -3,8 +3,13 @@
 
 
 # Dev
+    git add --all
     git co "mi mensaje"
+    - la siguente linea actualiza la version automaticamente
     git go
+
+    - adicionalmente poner en dominio propio
+    git push jarcaf
 
 # hook 
     - actualiza la version: ver carpeta docs/git
