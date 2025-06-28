@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Hdegues">
+  <title>Arquitectura de Software</title>
+  <style>
+    html{
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+    }
+
+    #footer {
+      display: block;
+      background-color: black;
+      color: white;
+      text-align: right;
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body class="book">
+  <div id="header">
+    <h1>Arquitectura de Software</h1>
+    <div>
+      <p>Índice</p>
+      <ul class="sectlevel1">
+        <li><a href="#fuentes"><strong>Fuentes</strong></a></li>
+        <li><a href="#buenaspracticas"><strong>Valores Principios y Buenas Prácticas</strong></a></li>
+        <li><a href="#principiosdisenyo"><strong>Principios de Diseño</strong></a></li>
+        <li><a href="#patronesdisenyo"><strong>Patrones de Diseño</strong></a></li>
+        <li><a href="#arquitectura"><strong>Arquitectura del Software</strong></a></li>
+      </ul>
+    </div>
+  </div>
+  <div id="content">
+    <div class="sect1">
+      <h2 id="fuentes"><strong>Fuentes</strong></h2>
+      <div class="sectionbody">
+        <ul>
+          <li>
+            <p><strong class="blue">Basic of the Unix Philosophy de Doug Mcllroy</strong></p>
+          </li>
+          <li>
+            <p><strong class="blue">Estructured Design - Fundamentals of a Discipline of Computer Program
+                and Sysetm Design de Edward Yourdon y Larry LeRoy Constantine</strong></p>
+          </li>
+          <li>
+            <p><strong class="blue">Object Oriented Software Construction de Bertand Meyer</strong></p>
+          </li>
+          <li>
+            <p><strong class="blue">GRASP - (object oriented design) de Craig Larman</strong></p>
+          </li>
+          <li>
+            <p><strong class="blue">La Catedral y el Basar de Erick S. Raymond</strong></p>
+          </li>
+          <li>
+            <p><strong class="blue">Principles of ODD de Robert Martin</strong></p>
+          </li>
+          <li>
+            <p><strong class="blue">From STUPID to SOLID de Clermont</strong></p>
+          </li>
+          <li>
+            <p><strong class="blue">Programatic Programer Quick References Guide de Andrew Hunt y David
+                Thomas</strong></p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="sect1">
+      <h2 id="buenaspracticas"><strong>Valores Principios y Buenas Prácticas</strong></h2>
+      <div class="">Valores</div>
+      <div class="sectionbody">
+        <ul>
+          <li>Son universales y muy genéricos, aportan un proposito a las practicas</li>
+          <li>Son demasiado abstractos para guiar el comportamiento</li>
+          <li>Se pueden aplicar en otros contextos diferentes al desarrollo de software</li>
+          <li>Valores
+            <ul>
+              <li>Calidad/Cualidad externa de su ejecucion
+                <ul>
+                  <li><b>Fiabilidad</b></li>
+                  <li><b>Usabilidad</b></li>
+                  <li><b>Portabilidad</b></li>
+                  <li><b>Seguridad</b></li>
+                  <li><b>Interoperabilidad</b></li>
+                  <li><b>Escalabilidad</b></li>
+                </ul>
+              </li>
+            </ul>
+            <ul>
+              <li>Calidad/Cualidad interna de su codigo: Mantenibilidad de la que depende todas las anteriores
+                <ul>
+                  <li><b>Mantenibilidad correctiva</b> para eliminar errores</li>
+                  <li><b>Mantenibilidad perfectiva</b> para la incorpocacion de funcionalidades, requisitos</li>
+                  <li><b>Mantenibilidad adaptativa</b> para la adecuacion a tecnologias</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="">Principios</div>
+      <div class="sectionbody">
+        <ul>
+          <li>Son el <b>hueco entre los valores y las buenas precticas</b> técnicas</li>
+          <li>Son un <b>refinamiento de los valores</b> pero concretados para un entorno especifico</li>
+          <li>Son un sistema de <b>leyes o normas que deben ser cumplidos</b> para que un sistema funciona adecuadamente</li>
+          <li>Los 18: reglas, criterios, estrategias, leyes... de <b>aplicabilidad general con excepciones, compromisos de la ingenieria</b> </li>
+        </ul>
+      </div>
+
+      <div class="">Buenas Prácticas</div>
+      <div class="sectionbody">
+        <ul>
+          <li>Son las actividades que se realizan dentro del equipo de forma continuada en el dia a dia y conforme a unas reglas claras y objetivos</li>
+          <li>Permiten adquirir nuevas habilidades y experiencia</li>
+          <li>Son la evidencia de los valores y pueden cambiad dependiendo de la situación</li>
+          <li>Practicas con un aplicabilidad particular
+            <ul>
+              <li>Positivas: ejemplos, patrones, modismos, tecnicas, estilos, heuristica, tacticas...</li>
+              <li>Negativas: contraejemplos, antipatron, smell...</li>
+            </ul>
+
+          </li>
+        </ul>
+
+        <p><b>No se convierte en un artesano del software aprendiendo una lista de heuristicas. El profesionalismo y la artesania provienen de valores que impulsan las disciplinas</b></p>
+        <p><b>Las buenas practicas no son suficientes</b> por si mismas, tienen que entenderse <b>bajo un conjunto de valores y principios</b> que permiten al equipo comportarse como una unidad con un objetivo en comun</p>
+
+      </div>
+    </div>
+
+    <div class="sect1">
+      <h2 id="principiosdisenyo"><strong>Principios de Diseño</strong></h2>
+      <div class="sectionbody">
+        <ul>
+          <li>Sistema de normas o leyes que deben ser cumplidas para que un sistema funcione adecuadamente
+            <ul>
+              <li>Contraejemplos: que no requieren una aplicabilidad general
+                <ul>
+                  <li><b>Eficiencia</b></li>
+                  <li><b>Principio de inversion de dependencias</b> de Martin</li>
+                  <li><b>Principio de segregacion de interfaces</b> de Martin</li>
+                  <li><b>Singleton</b> de STUPID</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>Principios
+            <ul>
+              <li>Para el valor/cualidad de la <b>Claridad</b> vs <b>Viscosidad</b>
+                <ul>
+                  <li><b>Principio de Legibilidad</b>
+                    <ul>
+                      <li><b>Principio de Unificación</b></li>
+                      <li><b>Principio de Uniformización</b></li>
+                      <li><b>Principio de Minimización</b></li>
+                    </ul>  
+                  </li>
+                </ul>
+              </li>
+              <li>Para el valores/cualidades de la <b>Reusabilidad</b> y <b>Robustes</b> vs <b>Inmobilidad</b> y <b>Fragilidad</b>
+                <ul>
+                  <li><b>Principio de Modularidad</b>
+                    <ul>
+                      <li>Segun su interfaz
+                        <ul>
+                          <li><b>Principio de Abstracción</b></li>
+                          <li><b>Principio de Autoprotección</b></li>
+                          <li><b>Principio de Ocultación</b></li>
+                        </ul>  
+                      </li>
+                      <li>Segun su implementación
+                        <ul>
+                          <li><b>Principio de Cohesion</b></li>
+                          <li><b>Principio de Desacoplamiento</b></li>
+                          <li><b>Principio de Granularidad</b></li>
+                        </ul>  
+                      </li>
+                      <li>Segun su relación
+                        <ul>
+                          <li><b>Principio de Jerarquización</b></li>
+                          <li><b>Principio de Dominio</b></li>
+                          <li><b>Principio de la Tegnología</b></li>
+                        </ul>  
+                      </li>
+                    </ul>  
+                  </li>
+                </ul>
+              </li>
+              <li>Para el valor/cualidad de la <b>Flexibilidad</b> vs <b>Rigidez</b>
+                <ul>
+                  <li><b>Principio de Extensibilidad</b>
+                    <ul>
+                      <li><b>Principio de Generalización</b></li>
+                      <li><b>Principio de Especialización</b></li>
+                      <li><b>Principio de la Sustitución</b></li>
+                    </ul>  
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sect1">
+      <h2 id="patronesdisenyo"><strong>Patrones de Diseño</strong></h2>
+      <div class="sectionbody">
+        <ul>
+          <li>Buenas practicas para <b>problemas particulares</b> (baja cohesion, alto acoplamiento, ...)
+            <ul>
+              <li>Patrones Creacionales
+                <ul>
+                  <li>Abstract Factory</li>
+                  <li>Builder</li>
+                  <li>Factory Method</li>
+                  <li>Prototype</li>
+                  <li>Singleton</li>
+                </ul>
+              </li>
+              <li>Patrones Estructurales
+                <ul>
+                  <li>Adapter</li>
+                  <li>Bridge</li>
+                  <li>Composite</li>
+                  <li>Decorator</li>
+                  <li>Facade</li>
+                  <li>Flyweight</li>
+                  <li>Proxy</li>
+                </ul>
+              </li>
+              <li>Patrones de Comportamiento
+                <ul>
+                  <li>Chain of Responsability</li>
+                  <li>Command</li>
+                  <li>Interpreter</li>
+                  <li>Iterator</li>
+                  <li>Mediator</li>
+                  <li>Memento</li>
+                  <li>Observer</li>
+                  <li>State</li>
+                  <li>Strategy</li>
+                  <li>Template method</li>
+                  <li>Visitor</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sect1">
+      <h2 id="arquitectura"><strong>Arquitectura del Software</strong></h2>
+      <div class="sectionbody">
+        <ul>
+          <li>Buenas practicas para el <b>problemas general de organizar un componente de software</b>
+            <ul>
+              <li>Modelo/Vista/Presentador con Presentador del Modelo
+                <ul>
+                  <li>Arquitectura Exagonal</li>
+                  <li>Arquitectura de Cebolla</li>
+                  <li>Arquitectura Limpia</li>
+                </ul>
+              </li>
+              <li>Modelo/Vista/Vista-Modelo</li>
+              <li>Modelo/Vista/Presentador con vista Pasiva</li>
+              <li>Modelo/Vista/Presentador con Controlador supervisor</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+  <div>&nbsp;</div>
+  <div id="footer">
+    <div id="footer-text">
+      Version 0.0.1<br>
+    </div>
+  </div>
+
+  <script>
+  </script>
+
+</html>
