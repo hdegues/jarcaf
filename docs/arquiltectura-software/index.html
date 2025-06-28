@@ -20,6 +20,22 @@
       text-align: right;
       padding: 20px;
     }
+
+    .oculto {
+      display: none;
+    }
+
+    .toggle:checked + .togeable {
+      display: block;
+    }
+
+    .mouse {
+      cursor: pointer;
+    }
+
+    .sinpuntos {
+      list-style-type: none;
+    }
   </style>
 </head>
 
@@ -43,7 +59,22 @@
       <div class="sectionbody">
         <ul>
           <li>
-            <p><strong class="blue">Basic of the Unix Philosophy de Doug Mcllroy</strong></p>
+            <div>
+              <label for="verphilosoply" class="mouse"><b>Basic of the Unix Philosophy de Doug Mcllroy</b></label><input id="verphilosoply" type="checkbox" class="oculto toggle">
+              <div class="oculto togeable">Resumen de los principios de McIlroy (Unix Philosophy)
+                <ul class="sinpuntos">
+                  <li>✅ Haz una cosa y hazla bien:  Cada programa debe estar enfocado a hacer solo una tarea, y hacerla de la mejor manera posible.</li>
+                  <li>✅ Trabaja con programas que lean y escriban flujos de texto: Esto facilita encadenar programas con pipes, permitiendo gran flexibilidad y reutilización.</li>
+                  <li>✅ Construye programas que sean reutilizables y componibles: En lugar de grandes monolitos, crea piezas que se puedan conectar como bloques de Lego.</li>
+                  <li>✅ Diseña programas que sean fáciles de probar y depurar: Una consecuencia de la simplicidad es que puedes verificar más fácilmente su correcto funcionamiento.</li>
+                  <li>✅ Evita sorpresas al usuario: Un programa debe ser predecible y comportarse de forma consistente.</li>
+                  <li>✅ Usa interfaces sencillas y estables: Interfaces claras, basadas en texto, son más duraderas y universales.</li>
+                  <li>✅ Prefiere la transparencia al ocultamiento: No enmascares lo que hace el programa. Mejor que el usuario pueda inspeccionar y entender.</li>
+                  <li>✅ Sé tolerante en la entrada, estricto en la salida: Procura aceptar formatos flexibles al leer, pero emitir datos bien formateados al escribir.</li>
+                  <li>✅ Aprovecha el poder del software libre: Comparte el código para permitir la mejora colaborativa.</li>
+                </ul>
+              </div>
+            </div>
           </li>
           <li>
             <p><strong class="blue">Estructured Design - Fundamentals of a Discipline of Computer Program
